@@ -22,6 +22,7 @@ export const UnderlineLink = ({
             href={href}
             target={target}
             rel={rel}
+
             className={`underline decoration-[#d2e85d] decoration-2 underline-offset-8 hover:text-[#d2e85d] transition-all duration-300 ${className}`}
             {...props}
         >

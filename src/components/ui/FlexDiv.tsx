@@ -1,5 +1,5 @@
 import React from 'react';
-import { type SharedFlexProps, getFlexClasses } from './layoutProperties';
+import { type SharedFlexProps, getFlexClasses } from '../layout/layoutProperties';
 
 // Extend the shared properties alongside native Div attributes
 export interface FlexDivProps extends SharedFlexProps, React.HTMLAttributes<HTMLDivElement> { }
@@ -12,10 +12,11 @@ export const FlexDiv = ({
     margin = '',
     children,
     className = '',
+    wrap = false,
     ...props
 }: FlexDivProps) => {
 
-    const flexClasses = getFlexClasses({ direction, align, justify, gap, margin });
+    const flexClasses = getFlexClasses({ direction, align, justify, gap, margin, wrap });
     const divClasses = `${flexClasses} ${className}`;
 
     return (

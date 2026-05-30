@@ -13,7 +13,7 @@ const AboutMeSection = ({ aboutMeData }: AboutMeSectionProps) => {
     const subTitle = aboutMeData?.subTitle || "Who I Am";
     const description = aboutMeData?.description || "I am a software engineer passionate about building web applications...";
     return (
-        <FlexSection direction="responsive" align='start' justify='start' gap='lg' margin='my-20'>
+        <FlexSection direction="responsive" align='start' justify='start' gap='lg'>
             <div className="flex-1">
                 <Typography variant="h2">{title}</Typography>
             </div>

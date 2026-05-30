@@ -1,7 +1,7 @@
-import type { ProjectInfo } from '../model/ProjectInfo';
-import VAcademyImage from '../assets/images/v-academy-preview.png';
-import DataVizXImage from '../assets/images/dataviz-preview.png';
-import type { SectionData } from '../model/SectionData';
+import type { ProjectInfo } from '../../model/ProjectInfo';
+import VAcademyImage from '../../assets/images/v-academy-preview.png';
+import DataVizXImage from '../../assets/images/dataviz-preview.png';
+import type { SectionData } from '../../model/SectionData';
 
 export const FuturedProjectData: SectionData = {
     title: 'Featured Projects',

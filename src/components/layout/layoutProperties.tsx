@@ -13,6 +13,7 @@ export interface SharedFlexProps {
     justify?: Justify;
     gap?: Gap;
     margin?: string;
+    wrap?: boolean; // Defined as boolean
     children?: React.ReactNode;
 }
 
@@ -51,13 +52,14 @@ export const gapClasses = {
     '2xl': 'gap-20' // 80px
 };
 
-// 4. Utility function to generate Tailwind classes
+// 4. Utility function to generate Tailwind classes (updated to process 'wrap')
 export const getFlexClasses = ({
     direction = 'responsive',
     align = 'stretch',
     justify = 'start',
     gap = 'md',
-    margin = ''
+    margin = '',
+    wrap = false // Default to false (no wrap)
 }: Omit<SharedFlexProps, 'children'>): string => {
     return [
         'flex',
@@ -65,6 +67,7 @@ export const getFlexClasses = ({
         alignClasses[align],
         justifyClasses[justify],
         gapClasses[gap],
+        wrap ? 'flex-wrap' : '', // Appends 'flex-wrap' if wrap is set to true
         margin
     ].filter(Boolean).join(' ');
 };

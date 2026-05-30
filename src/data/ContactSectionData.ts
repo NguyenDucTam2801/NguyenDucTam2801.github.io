@@ -1,4 +1,4 @@
-import type { ContactModel } from "../model/ContactModal";
+import type { ContactModel } from "../model/ContactModel";
 
 
 export const ContactSectionData: ContactModel = {

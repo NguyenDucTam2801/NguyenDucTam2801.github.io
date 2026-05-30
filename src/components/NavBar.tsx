@@ -7,9 +7,9 @@ const NavBar = () => {
     const [isOpen, setIsOpen] = useState(false);
 
     const navLinks = [
-        { name: 'Work', href: '/work', label: 'View my featured projects' },
+        // { name: 'Work', href: '/work', label: 'View my featured projects' },
         { name: 'About', href: '/about', label: 'Learn more about me' },
-        { name: 'Contact', href: '/contact', label: 'Get in touch with me' }
+        // { name: 'Contact', href: '/contact', label: 'Get in touch with me' }
     ];
 
     const toggleMenu = () => setIsOpen(!isOpen);
@@ -18,7 +18,7 @@ const NavBar = () => {
         <nav className="fixed top-0 left-0 z-[100] px-6 md:px-10 w-full h-20 flex items-center justify-between bg-[#0a0a0a]/95 backdrop-blur-md border-b border-white/10">
 
             {/* Logo */}
-            <a className="flex items-center gap-0 font-normal font-bebas text-gray-300 hover:text-white 
+            <a className="relative flex items-center gap-0 font-normal font-bebas text-gray-300 hover:text-white 
                  transition-all duration-300 group hover:scale-110 z-50" href="/">
                 <span className="text-4xl">TAMU</span>
                 <FontAwesomeIcon icon={faArrowRight} size="xl" className="
@@ -38,19 +38,18 @@ const NavBar = () => {
                         key={link.name}
                         href={link.href}
                         aria-label={link.label}
-                        className="relative tracking-wider text-gray-300 hover:text-white 
+                        className="relative flex items-center tracking-wider text-gray-300 hover:text-white 
                  transition-all duration-300 group hover:scale-110"
                     >
                         {link.name}
 
                         {/* Neon Underline Hover Effect */}
-                        <span className="absolute -bottom-1 left-0 w-0 h-[3px] bg-white 
+                        {/* <span className="absolute -bottom-1 left-0 w-0 h-[3px] bg-white 
                        group-hover:w-full transition-all duration-500 
                         group-hover:shadow-[0_0_20px_white] 
                        group-hover:shadow-white/50">
-                        </span>
+                        </span> */}
 
-                        {/* Soft ambient hover glow */}
                         <span className="absolute inset-0 bg-white/50 scale-95 opacity-0 
                        group-hover:opacity-100 group-hover:scale-100 
                        blur-xl transition-all duration-500 -z-10">

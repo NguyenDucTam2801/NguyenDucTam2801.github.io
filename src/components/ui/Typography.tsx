@@ -1,9 +1,18 @@
 import React from "react";
 
 interface TypographyProps extends React.HTMLAttributes<HTMLElement> {
-    variant?: 'h1' | 'h2' | 'h3' | 'p';
+    variant?: 'h1' | 'h2' | 'h3' | 'p' | 'subtitle';
     children: React.ReactNode
 }
+
+const tagMap = {
+    h1: 'h1',
+    h2: 'h2',
+    h3: 'h3',
+    p: 'p',
+    subtitle: 'p' // A subtitle is semantically a paragraph element
+} as const;
+
 
 export const Typography = ({ variant = 'p', children, className = '', ...props }: TypographyProps) => {
     const variantClasses = {
@@ -17,10 +26,13 @@ export const Typography = ({ variant = 'p', children, className = '', ...props }
         h3: 'text-2xl md:text-3xl lg:text-4xl font-manrope tracking-tight text-white leading-snug',
 
         // p: Mobile (base/16px) ➜ iPad & Desktop (lg/18px)
-        p: 'text-base md:text-lg font-manrope text-gray-300 leading-relaxed'
+        p: 'text-base md:text-lg font-manrope text-gray-300 leading-relaxed',
+
+        // subtitle: Mobile (xl) ➜ iPad & Desktop (2xl)
+        subtitle: 'text-xl md:text-2xl font-manrope text-white leading-relaxed'
     };
 
-    const Component = variant;
+    const Component = tagMap[variant];
     return (
         <Component className={`${variantClasses[variant]} ${className}`} {...props}>
             {children}

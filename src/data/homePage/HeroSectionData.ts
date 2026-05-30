@@ -1,4 +1,4 @@
-import type { SectionData } from "../model/SectionData";
+import type { SectionData } from "../../model/SectionData";
 
 export const HeroSectionData: SectionData = {
     title: "Hi, I am Nguyen Duc Tam",

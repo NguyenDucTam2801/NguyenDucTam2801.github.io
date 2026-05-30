@@ -9,7 +9,7 @@ import {
   faHouse,
   faAngleRight,
   faSquareArrowUpRight,
-
+  faDownload
   // Add more icons you need here
 } from '@fortawesome/free-solid-svg-icons';
 
@@ -30,7 +30,8 @@ library.add(
   faGithubBrand,
   faLinkedinBrand,
   faSquareArrowUpRight,
-  faInstagramSquare
+  faInstagramSquare,
+  faDownload
 
   // Add more icons as you need them
 );

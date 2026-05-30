@@ -20,7 +20,7 @@ const HeroSection = ({ heroSectionData, socialIconsData }: HeroSectionProps) => 
     const description = heroSectionData.description || "A HCM city based website application developer passionate about building accessible and user friendly websites."
     const btnText = "CONTACT ME"
     return (
-        <FlexSection direction='responsiveReverse' align='center' justify='between' gap='lg' className='py-10 md:py-20'>
+        <FlexSection direction='responsiveReverse' align='center' justify='between' gap='lg'>
             <FlexDiv direction='col' gap='md' className='flex-1'>
                 <Typography variant='h1'>{title}</Typography>
                 <Typography variant='p'>{description}</Typography>
