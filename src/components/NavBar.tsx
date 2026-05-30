@@ -45,16 +45,7 @@ const NavBar = () => {
                         {/* Glow span elements remain the same */}
                     </Link>
                 ))}
-                {navLinks.map((link) => (
-                    <Link
-                        key={link.name}
-                        to={link.href} // 👈 Changed from href to to
-                        onClick={() => setIsOpen(false)}
-                        className="text-gray-300 hover:text-white tracking-widest hover:scale-110 transition-all duration-300 py-2"
-                    >
-                        {link.name}
-                    </Link>
-                ))}
+
             </div>
 
             {/* Mobile Menu Icon Toggle Button */}
@@ -72,14 +63,14 @@ const NavBar = () => {
                 : 'opacity-0 -translate-y-full pointer-events-none'
                 }`}>
                 {navLinks.map((link) => (
-                    <a
+                    <Link
                         key={link.name}
-                        href={link.href}
-                        onClick={() => setIsOpen(false)} // Closes menu when a link is clicked
+                        to={link.href} // 👈 Changed from href to to
+                        onClick={() => setIsOpen(false)}
                         className="text-gray-300 hover:text-white tracking-widest hover:scale-110 transition-all duration-300 py-2"
                     >
                         {link.name}
-                    </a>
+                    </Link>
                 ))}
             </div>
 
