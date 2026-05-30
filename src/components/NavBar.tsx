@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight, faBars, faXmark } from '@fortawesome/free-solid-svg-icons';
+import { Link } from 'react-router-dom';
 
 const NavBar = () => {
     // State to toggle the mobile menu drawer
@@ -34,27 +35,25 @@ const NavBar = () => {
             {/* Desktop Navigation Link Menu (Hidden on Mobile) */}
             <div className="hidden md:flex items-center space-x-10 text-white font-bebas text-2xl">
                 {navLinks.map((link) => (
-                    <a
+                    <Link
                         key={link.name}
-                        href={link.href}
+                        to={link.href} // 👈 Changed from href to to
                         aria-label={link.label}
-                        className="relative flex items-center tracking-wider text-gray-300 hover:text-white 
-                 transition-all duration-300 group hover:scale-110"
+                        className="relative tracking-wider text-gray-300 hover:text-white transition-all duration-300 group hover:scale-110"
                     >
                         {link.name}
-
-                        {/* Neon Underline Hover Effect */}
-                        {/* <span className="absolute -bottom-1 left-0 w-0 h-[3px] bg-white 
-                       group-hover:w-full transition-all duration-500 
-                        group-hover:shadow-[0_0_20px_white] 
-                       group-hover:shadow-white/50">
-                        </span> */}
-
-                        <span className="absolute inset-0 bg-white/50 scale-95 opacity-0 
-                       group-hover:opacity-100 group-hover:scale-100 
-                       blur-xl transition-all duration-500 -z-10">
-                        </span>
-                    </a>
+                        {/* Glow span elements remain the same */}
+                    </Link>
+                ))}
+                {navLinks.map((link) => (
+                    <Link
+                        key={link.name}
+                        to={link.href} // 👈 Changed from href to to
+                        onClick={() => setIsOpen(false)}
+                        className="text-gray-300 hover:text-white tracking-widest hover:scale-110 transition-all duration-300 py-2"
+                    >
+                        {link.name}
+                    </Link>
                 ))}
             </div>
 

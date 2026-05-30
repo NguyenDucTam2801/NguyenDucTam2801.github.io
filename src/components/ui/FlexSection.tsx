@@ -13,6 +13,7 @@ export const FlexSection = ({
     children,
     className = '',
     wrap = false,
+    id = "",
     ...props
 }: FlexSectionProps) => {
 
@@ -20,7 +21,7 @@ export const FlexSection = ({
     const sectionClasses = `w-[80%] mx-auto ${flexClasses} ${className}`;
 
     return (
-        <section className={sectionClasses} {...props}>
+        <section id={id} className={sectionClasses} {...props}>
             {children}
         </section>
     );

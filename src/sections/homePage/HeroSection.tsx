@@ -19,19 +19,30 @@ const HeroSection = ({ heroSectionData, socialIconsData }: HeroSectionProps) => 
     const title = heroSectionData.title || "Hi, I am Nguyen Duc Tam"
     const description = heroSectionData.description || "A HCM city based website application developer passionate about building accessible and user friendly websites."
     const btnText = "CONTACT ME"
+
+    const handleScroll = (elementId: string) => {
+        const targetElement = document.getElementById(elementId);
+        if (targetElement) {
+            targetElement.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start' // Aligns the top of the section with the top of the viewport
+            });
+        }
+    };
     return (
         <FlexSection direction='responsiveReverse' align='center' justify='between' gap='lg'>
             <FlexDiv direction='col' gap='md' className='flex-1'>
                 <Typography variant='h1'>{title}</Typography>
                 <Typography variant='p'>{description}</Typography>
                 <FlexDiv direction='row' align='center' justify='start' gap='md' className='mt-5'>
-                    <Button onClick={() => window.location.href = '/work'} className='inline-flex flex-row items-center' >
+                    <Button
+                        onClick={() => handleScroll('contact-section')} // 👈 Pass the target ID here
+                        className='inline-flex flex-row items-center'
+                    >
                         {btnText}
-                        <span className='hidden group-hover:inline ml-2 opacity-0
-                         group-hover:opacity-100 translate-x-0 group-hover:translate-x-2
-                        transition-all duration-300'>
-                            <FontAwesomeIcon icon="square-arrow-up-right" size='xl'
-                            />
+                        <span className='hidden group-hover:inline ml-2 opacity-0 group-hover:opacity-100 translate-x-0 group-hover:translate-x-2 transition-all duration-300'>
+                            {/* If this button scrolls, you might want a down arrow icon instead of download */}
+                            <FontAwesomeIcon icon="square-arrow-up-right" size='xl' />
                         </span>
                     </Button>
                     <SocialIcons socialIconsData={socialIconsData} />

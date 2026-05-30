@@ -1,10 +1,6 @@
-// import { useState } from 'react'
-// import reactLogo from './assets/react.svg'
-// import viteLogo from './assets/vite.svg'
-// import heroImg from './assets/hero.png'
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import HomePage from './pages/HomePage'
-import './App.css'
+import { HashRouter, Routes, Route } from 'react-router-dom'; // 1. Swapped to HashRouter
+import HomePage from './pages/HomePage';
+import './App.css';
 import { NotFoundPage } from './pages/NotFoundPage';
 import { OfflineAlert } from './components/OfflineAlert';
 import NavBar from './components/NavBar';
@@ -13,26 +9,26 @@ import { SocialIconsContact } from './data/SocialLinkContact';
 import { ContactSectionData } from './data/ContactSectionData';
 import AboutMePage from './pages/AboutMePage';
 
-
 function App() {
-  // const [count, setCount] = useState(0)
-
   return (
     <div className="bg-black w-full h-full py-1">
-      <NavBar />
+      {/* 2. Wrap the NavBar and routes together inside HashRouter */}
+      <HashRouter>
+        <NavBar />
 
-      <BrowserRouter>
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/about" element={<AboutMePage />} />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
-      </BrowserRouter>
-      <OfflineAlert />
-      <ContactSection contactData={ContactSectionData} socialIconsData={SocialIconsContact} />
 
+        {/* Placed inside the router in case it contains links */}
+        <ContactSection contactData={ContactSectionData} socialIconsData={SocialIconsContact} />
+      </HashRouter>
+
+      <OfflineAlert />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;

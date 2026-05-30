@@ -19,7 +19,7 @@ const ContactSection = ({ contactData, socialIconsData }: ContactSectionProps) =
     const resume = contactData.resume
     const resumeText = "For more info, here's my "
     return (
-        <FlexSection direction="col" align="start" justify="between" gap="lg" className="!mb-9">
+        <FlexSection id="contact-section" direction="col" align="start" justify="between" gap="lg" className="!mb-9">
             <FlexDiv direction="responsive" gap="md" className="w-full">
                 <FlexDiv direction="col" justify="between" gap="md" className='md:w-[50%] w-full h-full'>
                     <Typography variant="h2">{title}</Typography>

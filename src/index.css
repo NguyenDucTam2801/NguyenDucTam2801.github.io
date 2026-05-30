@@ -126,3 +126,7 @@ font-face {
   --font-bebas: Bebas, sans-serif; 
   --font-manrope: Manrope, sans-serif;
 }
+
+html {
+  scroll-behavior: smooth;
+}
