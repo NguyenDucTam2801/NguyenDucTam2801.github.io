@@ -37,7 +37,7 @@ const ContactSection = ({ contactData, socialIconsData }: ContactSectionProps) =
                 </FlexDiv>
                 <ContactForm />
             </FlexDiv>
-            <Typography variant="p" className="mt-auto">© 2024 Nguyen Duc Tam. All rights reserved.</Typography>
+            <Typography variant="p" className="mt-auto">© {new Date().getFullYear()} Nguyen Duc Tam. All rights reserved.</Typography>
 
 
 
