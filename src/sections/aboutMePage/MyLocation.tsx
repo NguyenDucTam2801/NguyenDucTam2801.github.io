@@ -49,7 +49,7 @@ export const MyLocationSection = ({ myLocationData, googleMapsLink, googleMapsEm
                     title="Google Maps Location"
 
                     src={googleMapsEmbed}
-                    className="w-full h-full border-none filter grayscale contrast-125 opacity-70 group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-700 ease-in-out z-10"
+                    className="w-full h-full border-none filter md:grayscale md:contrast-125 md:opacity-70 group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-700 ease-in-out z-10"
                     loading="lazy">
 
                 </iframe>
